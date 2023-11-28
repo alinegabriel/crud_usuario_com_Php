@@ -1,0 +1,15 @@
+<?php
+  abstract class Controller {
+    public function view($visao, $dados) {
+      extract($dados);
+      $arquivo = "views/$visao.php";
+
+      require_once "views/template/template.php";
+    }
+
+    public function redirect($visao){
+      header ('location: '.APP.$visao);
+
+    }
+  }
+ ?>
